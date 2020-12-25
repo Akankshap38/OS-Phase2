@@ -263,7 +263,6 @@ void writeFun()
 		for(j=0; j<4;j++,i++)
 		{
 			Tbuff[i]=mem[o][j];
-			cout<<Tbuff[i]<<"  "<<mem[o][j]<<"  ";
 		}
 	}
 
@@ -277,7 +276,6 @@ void writeFun()
 			break;
 		}
 	}
-    cout<<"Value of pos= "<<pos<<endl;
 	k=0;
        cout<<" writing: ";
 	for(int i=RA; k<=pos;i++,k++)
@@ -375,7 +373,7 @@ void exeUserProgram()
    cout<<"In execUserPorgram**************"<<endl;
     TI=0;
     for(ic=0;ic<buffsize;)
-       {  cout<<"Term= "<<term;
+       {  
            if(term==0)
            {
             cout<<"\nIteration starts......"<<endl;
@@ -394,14 +392,7 @@ void exeUserProgram()
 
             for(int j=0; j<4; j++)
         	ir[j]=mem[RA][j];
-
-            for(int j=0; j<4; j++)
-            {
-                cout<<"ir["<<j<<"]:-"<<ir[j]<<endl;
-            }
-            cout<<endl;
     	cout<<"IC : "<<ic<<endl;
-
     	num=ir[2]-'0';
     	num=num*10+(ir[3]-'0');
     	cout<<"num= "<<num<<endl;
@@ -409,7 +400,7 @@ void exeUserProgram()
         for(int p=0;p<4;p++)
             cout<<ir[p];
         cout<<endl;
-             cout<<"RA Value:"<<RA<<endl;
+        cout<<"RA Value:"<<RA<<endl;
 
         if(ir[0]=='G' && ir[1]=='D')
     	{
@@ -428,8 +419,6 @@ void exeUserProgram()
     	    else
 	      {
 	          mos();
-	         // ic--;
-	         // cout<<"IC after decrementing "<<
 	      }
     	}
     	else if(ir[0]=='P' && ir[1]=='D')
@@ -448,12 +437,8 @@ void exeUserProgram()
              mos();
             for(int j=0;j<4;j++)
                 r[j]=mem[RA][j];
-                cout<<"Content of register = "<<endl;
-                for(int j=0;j<4;j++)
-                    cout<<r[j];
-
-                cout<<endl;
-
+            cout<<"Content of register = "<<endl;
+            cout<<endl;
         }
         else if(ir[0]=='S'&&ir[1]=='R')
         {   addMap(num);
@@ -543,8 +528,8 @@ while(!fin.eof())
     }
         buff[k]='\0';
     cout<<"buff= ";
-    for(int l=0;buff[l]!='\0';l++)
-         cout<<buff[l];
+//     for(int l=0;buff[l]!='\0';l++)
+//          cout<<buff[l];
          char str100[40];
 
          strcpy(str100,buff);
